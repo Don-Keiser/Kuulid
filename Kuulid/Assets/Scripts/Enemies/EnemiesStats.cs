@@ -14,6 +14,8 @@ public class EnemiesStats : MonoBehaviour
 
     public float eBulletSpeed;
 
+    [SerializeField] bool isBoss = false;
+
     private void Awake()
     {
         if (instance == null)
@@ -38,13 +40,16 @@ public class EnemiesStats : MonoBehaviour
     {
         if (eCurrentHealth == 0)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
             return;
         }
 
         eCurrentHealth -= damageAmount;
 
-        OnHealthChange.Invoke();
+        if (isBoss)
+        {
+            OnHealthChange.Invoke();
+        }
 
         if (eCurrentHealth < 0)
         {

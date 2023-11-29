@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemies"))
         {
             gameObject.SetActive(false);
-            EnemiesStats.instance.TakeDamage(PlayerStats.instance.pDamage);
+            collision.gameObject.GetComponent<EnemiesStats>().TakeDamage(PlayerStats.instance.pDamage);
         }
     }
 }

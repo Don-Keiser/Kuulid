@@ -11,7 +11,7 @@ public class BossController : MonoBehaviour
     [SerializeField] Transform bulletPositionPattern3;
     [SerializeField] float changeCooldown;
 
-    private float moveCooldown;
+    private float moveCooldown = 5f;
     private float changeShootCooldown = 5f;
 
     private bool isChoosingBetweenShoots = false;
@@ -32,7 +32,7 @@ public class BossController : MonoBehaviour
     {
         currentHeight = transform.position.y;
 
-        moveCooldown += Time.deltaTime;
+        moveCooldown -= Time.deltaTime;
         changeShootCooldown -= Time.deltaTime;
 
         StartCoroutine(MovePaternHorizontal());
@@ -104,7 +104,7 @@ public class BossController : MonoBehaviour
 
             foreach (Transform pos in bulletPositionPattern1)
             {
-                GameObject bullet = EnemyObjectPool.instance.GetPooledObject();
+                GameObject bullet = BossObjectPool.instance.GetPooledObject();
 
                 if (bullet != null)
                 {
@@ -118,7 +118,6 @@ public class BossController : MonoBehaviour
 
     private IEnumerator ShootCircle()
     {
-        Debug.Log("Shoot2 is running");
 
         while (changeShootCooldown > 0)
         {
@@ -126,7 +125,7 @@ public class BossController : MonoBehaviour
 
             if (!circleTurning)
             {
-                bPP2G.rotation = bPP2G.rotation * Quaternion.Euler(0, 0, 20);
+                bPP2G.rotation = bPP2G.rotation * Quaternion.Euler(0, 0, 10);
 
                 if (bPP2G.rotation == Quaternion.Euler(0, 0, 20))
                 {
@@ -135,7 +134,7 @@ public class BossController : MonoBehaviour
             }
             else if (circleTurning)
             {
-                bPP2G.rotation = bPP2G.rotation * Quaternion.Euler(0, 0, -20);
+                bPP2G.rotation = bPP2G.rotation * Quaternion.Euler(0, 0, -10);
 
                 if (bPP2G.rotation == Quaternion.Euler(0, 0, -20))
                 {
@@ -145,7 +144,7 @@ public class BossController : MonoBehaviour
 
             foreach (Transform pos2 in bulletPositionPattern2)
             {
-                GameObject bullet = EnemyObjectPool.instance.GetPooledObject();
+                GameObject bullet = BossObjectPool.instance.GetPooledObject();
 
                 if (bullet != null)
                 {
@@ -163,7 +162,7 @@ public class BossController : MonoBehaviour
         {
             yield return new WaitForSeconds(0.01f);
 
-            GameObject bullet = EnemyObjectPool.instance.GetPooledObject();
+            GameObject bullet = BossObjectPool.instance.GetPooledObject();
 
             if (bullet != null)
             {
@@ -231,11 +230,15 @@ public class BossController : MonoBehaviour
 
     private IEnumerator MovePaternHorizontal()
     {
-        while (moveCooldown <= 5)
+        //while moveCooldown hasn't reached past 0, do not do the coroutine
+        while (moveCooldown > 0)
         {
             yield return null;
         }
-        moveCooldown = 0;
+
+        //Vector2 MoveLeft = new Vector2(-4f, transform.position.y);
+        //Vector2 MoveRight = new Vector2(4f, transform.position.y);
+        //Vector2 MoveBackToOrigin = new Vector2(0f, transform.position.y);
 
         Vector2 MoveLeft = Vector2.Lerp(transform.position, new Vector2(-4f, transform.position.y), 1);
         Vector2 MoveRight = Vector2.Lerp(transform.position, new Vector2(4f, transform.position.y), 1);
@@ -243,11 +246,7 @@ public class BossController : MonoBehaviour
 
         Vector2[] randomMove = new Vector2[] { MoveLeft, MoveRight };
 
-        if (transform.position.x <= -4)
-        {
-            transform.position = MoveBackToOrigin;
-        }
-        else if (transform.position.x >= 4)
+        if (transform.position.x <= -3 || transform.position.x >= 3)
         {
             transform.position = MoveBackToOrigin;
         }
@@ -255,5 +254,6 @@ public class BossController : MonoBehaviour
         {
             transform.position = randomMove[Random.Range(0, 2)];
         }
+        moveCooldown = 5f;
     }
 }
