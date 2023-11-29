@@ -6,7 +6,7 @@ public class EnemyObjectPool : MonoBehaviour
 {
     public static EnemyObjectPool instance;
 
-    [SerializeField] List<GameObject> pooledObjects = new List<GameObject>();
+    public List<GameObject> pooledObjects = new List<GameObject>();
     [SerializeField] int amountToPool;
     [SerializeField] GameObject EnemyBulletPrefab;
 

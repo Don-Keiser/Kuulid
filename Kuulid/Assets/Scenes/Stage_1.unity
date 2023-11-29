@@ -384,6 +384,106 @@ MonoBehaviour:
   pooledObjects: []
   amountToPool: 20
   BulletPrefab: {fileID: 3455194144485122745, guid: a50c815f8e3fe8944acb7c7a3e895dd4, type: 3}
+--- !u!1001 &366312295
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -4755761934463960699, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+      propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4755761934463960699, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+      propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1131937916}
+    - target: {fileID: -4755761934463960699, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+      propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdatePlayerHealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: -4755761934463960699, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+      propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HealthBars, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: -4755761934463960699, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+      propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 366312296}
+    - target: {fileID: -4755761934463960699, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+      propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: PlayerStats, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2164501410793937986, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+      propertyPath: speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2164501410793937986, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+      propertyPath: cooldown
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2164501410793937990, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2164501410793937990, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2164501410793937990, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2164501410793937990, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2164501410793937990, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2164501410793937990, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2164501410793937990, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2164501410793937990, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2164501410793937990, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2164501410793937990, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2164501410793937990, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2164501410793937992, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+      propertyPath: m_Name
+      value: Player (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+--- !u!114 &366312296 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -4755761934463960699, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+  m_PrefabInstance: {fileID: 366312295}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a81d1179140ebab448b594a481ebe34f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &479170374
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,122 +905,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pHealthBarForegroundImage: {fileID: 17984033}
   eHealthBarForegroundImage: {fileID: 479170376}
---- !u!1001 &1166627550
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -4755761934463960699, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
-      propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4755761934463960699, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
-      propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -4755761934463960699, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
-      propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1131937916}
-    - target: {fileID: -4755761934463960699, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
-      propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -4755761934463960699, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
-      propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpdatePlayerHealthBar
-      objectReference: {fileID: 0}
-    - target: {fileID: -4755761934463960699, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
-      propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: HealthBars, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: -4755761934463960699, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
-      propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 1166627551}
-    - target: {fileID: -4755761934463960699, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
-      propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: PlayerStats, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164501410793937986, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
-      propertyPath: speed
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164501410793937986, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
-      propertyPath: cooldown
-      value: 0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164501410793937989, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164501410793937990, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164501410793937990, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164501410793937990, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164501410793937990, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164501410793937990, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164501410793937990, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164501410793937990, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164501410793937990, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164501410793937990, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164501410793937990, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164501410793937990, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164501410793937992, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164501410793937992, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
---- !u!114 &1166627551 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -4755761934463960699, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
-  m_PrefabInstance: {fileID: 1166627550}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a81d1179140ebab448b594a481ebe34f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1176862072
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,7 +1034,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledObjects: []
-  amountToPool: 100
+  amountToPool: 500
   EnemyBulletPrefab: {fileID: 7131314550132805379, guid: 898a5254f7952ea4186d553329a1bcb3, type: 3}
 --- !u!1 &1290249993
 GameObject:
@@ -1453,7 +1437,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3104879511774067639, guid: 5f8aa6593f3aacb4f9737d2cdccd4072, type: 3}
       propertyPath: cooldown
-      value: 0.6
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3104879511774067639, guid: 5f8aa6593f3aacb4f9737d2cdccd4072, type: 3}
+      propertyPath: maxHeight
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3104879511774067639, guid: 5f8aa6593f3aacb4f9737d2cdccd4072, type: 3}
+      propertyPath: moveCooldown
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3104879511774067639, guid: 5f8aa6593f3aacb4f9737d2cdccd4072, type: 3}
+      propertyPath: returnHeight
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3104879511774067639, guid: 5f8aa6593f3aacb4f9737d2cdccd4072, type: 3}
+      propertyPath: changeCooldown
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6768107779113247042, guid: 5f8aa6593f3aacb4f9737d2cdccd4072, type: 3}
+      propertyPath: eCurrentHealth
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6768107779113247042, guid: 5f8aa6593f3aacb4f9737d2cdccd4072, type: 3}
       propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1469,7 +1473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6768107779113247103, guid: 5f8aa6593f3aacb4f9737d2cdccd4072, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6768107779113247103, guid: 5f8aa6593f3aacb4f9737d2cdccd4072, type: 3}
       propertyPath: m_LocalPosition.x

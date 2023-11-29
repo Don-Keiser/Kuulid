@@ -7,9 +7,16 @@ public class EnemyBullet : MonoBehaviour
 
     [SerializeField] Rigidbody2D rb;
 
+    private Quaternion initialRotation;
+
+    private void OnEnable()
+    {
+        initialRotation = transform.rotation;
+    }
+
     private void FixedUpdate()
     {
-        rb.velocity = Vector2.down * EnemiesStats.instance.eBulletSpeed;
+        rb.velocity = initialRotation * Vector3.down * EnemiesStats.instance.eBulletSpeed;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

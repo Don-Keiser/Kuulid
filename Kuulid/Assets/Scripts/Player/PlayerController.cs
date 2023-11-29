@@ -20,12 +20,11 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            DamageTest();
-        }
+        cooldownTimer -= Time.deltaTime;
 
-        Shoot();
+        //If cooldown inferior or equal to 0, strat shoot coroutine
+        if (cooldownTimer <= 0)
+            StartCoroutine("Shoot");
     }
 
     private void FixedUpdate()
@@ -38,11 +37,10 @@ public class PlayerController : MonoBehaviour
         movement = value.Get<Vector2>();
     }
 
-    private void Shoot()
+    private IEnumerator Shoot()
     {
-        cooldownTimer -= Time.deltaTime;
 
-        if (cooldownTimer > 0) return;
+        yield return null;
 
         cooldownTimer = cooldown;
 
