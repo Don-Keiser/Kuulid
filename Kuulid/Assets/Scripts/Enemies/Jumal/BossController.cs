@@ -4,33 +4,33 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
+    [Header("GameObject")]
     [SerializeField] GameObject bulletPrefab;
+    [Header("Transforms")]
     [SerializeField] Transform[] bulletPositionPattern1;
     [SerializeField] Transform bPP2G;
     [SerializeField] Transform[] bulletPositionPattern2;
     [SerializeField] Transform bulletPositionPattern3;
+    [Header("Floats")]
     [SerializeField] float changeCooldown;
 
+    //private floats
     private float moveCooldown = 5f;
     private float changeShootCooldown = 5f;
 
+    //private bools
     private bool isChoosingBetweenShoots = false;
-
-    [SerializeField] float maxHeight;
-    private float currentHeight;
-
     private bool circleTurning = false;
-
     private bool spiralTurning = false;
 
     private void Start()
     {
+        //Starts the shoot Spiral Coroutine so Boss shoots immediately when instantiated
         StartCoroutine(ShootSpiral());
     }
 
     private void Update()
     {
-        currentHeight = transform.position.y;
 
         moveCooldown -= Time.deltaTime;
         changeShootCooldown -= Time.deltaTime;
@@ -40,23 +40,6 @@ public class BossController : MonoBehaviour
         if (!isChoosingBetweenShoots && changeShootCooldown <= 0)
         {
             ChooseBetweenShoots();
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        CheckPosition();
-    }
-
-    private void CheckPosition()
-    {
-        if (currentHeight > maxHeight)
-        {
-            transform.position = Vector2.Lerp(transform.position, new Vector2(transform.position.x, maxHeight), Time.deltaTime * 5);
-        }
-        else
-        {
-            return;
         }
     }
 
@@ -172,7 +155,7 @@ public class BossController : MonoBehaviour
 
                 if (!spiralTurning)
                 {
-                    bulletPositionPattern3.rotation = bulletPositionPattern3.rotation * Quaternion.Euler(0, 0, 5);
+                    bulletPositionPattern3.rotation = bulletPositionPattern3.rotation * Quaternion.Euler(0, 0, 7);
 
                     if (bulletPositionPattern3.rotation == Quaternion.Euler(0, 0, 70))
                     {
@@ -181,7 +164,7 @@ public class BossController : MonoBehaviour
                 }
                 else if (spiralTurning)
                 {
-                    bulletPositionPattern3.rotation = bulletPositionPattern3.rotation * Quaternion.Euler(0, 0, -5);
+                    bulletPositionPattern3.rotation = bulletPositionPattern3.rotation * Quaternion.Euler(0, 0, -7);
 
                     if (bulletPositionPattern3.rotation == Quaternion.Euler(0, 0, -70))
                     {
@@ -192,42 +175,6 @@ public class BossController : MonoBehaviour
         }
     }
 
-    private IEnumerator MoveCircularArc()
-    {
-        Debug.Log("isRun");
-
-        yield return null;
-
-        moveCooldown = 0;
-
-        Vector2 startingPos = transform.position;
-        Vector2 endPosRight = new Vector2(8f, transform.position.y);
-        Vector2 controlpointRight = startingPos + (endPosRight - startingPos) / 2 + Vector2.down * 5.0f;
-        Vector2 endPosLeft = new Vector2(8f, transform.position.y);
-        Vector2 controlpointLeft = startingPos + (endPosLeft - startingPos) / 2 + Vector2.down * 5.0f;
-
-        if (transform.position.y >= -4)
-        {
-            Vector2 m1 = Vector2.Lerp(startingPos, controlpointRight, Time.deltaTime);
-            Vector2 m2 = Vector2.Lerp(startingPos, endPosRight, Time.deltaTime);
-            transform.position = Vector2.Lerp(m1, m2, Time.deltaTime * 5f);
-            Debug.Log("RightArc");
-        }
-        else if (transform.position.y <= 4)
-        {
-            Vector2 m1 = Vector2.Lerp(startingPos, controlpointLeft, Time.deltaTime);
-            Vector2 m2 = Vector2.Lerp(startingPos, endPosLeft, Time.deltaTime);
-            transform.position = Vector2.Lerp(m1, m2, Time.deltaTime * 5f);
-            Debug.Log("LeftArc");
-        }
-        else
-        {
-            Vector2 middlePos = new Vector2(0, transform.position.y);
-            transform.position = Vector2.Lerp(startingPos, middlePos, Time.deltaTime * 5f);
-            Debug.Log("Other");
-        }
-    }
-
     private IEnumerator MovePaternHorizontal()
     {
         //while moveCooldown hasn't reached past 0, do not do the coroutine
@@ -235,10 +182,6 @@ public class BossController : MonoBehaviour
         {
             yield return null;
         }
-
-        //Vector2 MoveLeft = new Vector2(-4f, transform.position.y);
-        //Vector2 MoveRight = new Vector2(4f, transform.position.y);
-        //Vector2 MoveBackToOrigin = new Vector2(0f, transform.position.y);
 
         Vector2 MoveLeft = Vector2.Lerp(transform.position, new Vector2(-4f, transform.position.y), 1);
         Vector2 MoveRight = Vector2.Lerp(transform.position, new Vector2(4f, transform.position.y), 1);

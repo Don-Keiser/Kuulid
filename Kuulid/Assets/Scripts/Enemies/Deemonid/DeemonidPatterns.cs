@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class DeemonidPatterns : MonoBehaviour
 {
+    [Header("GameObjects")]
     [SerializeField] GameObject bulletPrefab;
+    [Header("Transforms")]
     [SerializeField] Transform BPPG;
     [SerializeField] Transform[] bulletPositionPattern1;
 
-    [SerializeField] float movementSpeed;
+    //private floats
+    private float movementSpeed;
 
-    private Vector2 movementDir;
-
+    //private bools
     private bool rotateShoot = false;
     private bool isAtOrigin = true;
 
+    //private Vectors
+    private Vector2 movementDir;
     private Vector3 originalPos;
     private Vector3 currentPos;
 
@@ -69,24 +73,11 @@ public class DeemonidPatterns : MonoBehaviour
         }
     }
 
-    private void HorizontalMovements()
-    {
-        var leftDir = Vector2.left;
-        var rightDir = Vector2.right;
-
-        transform.Translate(movementDir * movementSpeed * Time.deltaTime);
-
-        if (transform.position.x <= -9)
-        { movementDir = rightDir; }
-        else if (transform.position.x >= 9)
-        { movementDir = leftDir; }
-    }
-
     private IEnumerator DiagonalMovements()
     {
         while (true)
         {
-            var requiredSpeed = Vector2.Distance(transform.position, movementDir) / 0.2f;
+            movementSpeed = Vector2.Distance(transform.position, movementDir) / 0.4f;
 
             if (isAtOrigin)
             {
@@ -102,7 +93,7 @@ public class DeemonidPatterns : MonoBehaviour
                 RandomDiagonalMove();
             }
 
-            transform.position = Vector2.MoveTowards(transform.position, movementDir, requiredSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, movementDir, movementSpeed * Time.deltaTime);
             yield return null;
         }
     }

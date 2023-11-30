@@ -12,10 +12,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform bulletPosition;
     [SerializeField] float cooldown;
     private float cooldownTimer;
+    private WaveController wController;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        wController = FindAnyObjectByType<WaveController>();
     }
 
     private void Update()
@@ -23,7 +25,7 @@ public class PlayerController : MonoBehaviour
         cooldownTimer -= Time.deltaTime;
 
         //If cooldown inferior or equal to 0, strat shoot coroutine
-        if (cooldownTimer <= 0)
+        if (cooldownTimer <= 0 && wController.hasStarted)
             StartCoroutine("Shoot");
     }
 

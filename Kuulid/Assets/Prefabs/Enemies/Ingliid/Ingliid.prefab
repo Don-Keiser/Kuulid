@@ -276,8 +276,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eDamage: 1
-  eCurrentHealth: 50
-  eMaxHealth: 50
+  eCurrentHealth: 10
+  eMaxHealth: 10
   eBulletSpeed: 10
   isBoss: 0
   OnHealthChange:

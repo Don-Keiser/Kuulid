@@ -7,6 +7,22 @@ public class HealthBars : MonoBehaviour
 {
     [SerializeField] Image pHealthBarForegroundImage;
     [SerializeField] Image eHealthBarForegroundImage;
+    [SerializeField] GameObject eHealthBarHolder;
+
+    private WaveController wController;
+
+    private void Awake()
+    {
+        wController = FindAnyObjectByType<WaveController>();
+    }
+
+    private void Update()
+    {
+        if (wController.bossSpawned)
+        {
+            eHealthBarHolder.SetActive(true);
+        }
+    }
 
     public void UpdatePlayerHealthBar(PlayerStats health)
     {

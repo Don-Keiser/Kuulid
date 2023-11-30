@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class IngliidPatterns : MonoBehaviour
 {
+    [Header("GameObjects")]
     [SerializeField] GameObject bulletPrefab;
+    [Header("Transforms")]
     [SerializeField] Transform[] bulletPositionPattern1;
-
+    [Header("Floats")]
     [SerializeField] float movementSpeed;
 
     private Vector2 movementDir;

@@ -16,12 +16,16 @@ public class EnemiesStats : MonoBehaviour
 
     [SerializeField] bool isBoss = false;
 
+    private WaveController wController;
+
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
         }
+
+        wController = FindAnyObjectByType<WaveController>();
 
         eCurrentHealth = eMaxHealth;
     }
@@ -40,7 +44,15 @@ public class EnemiesStats : MonoBehaviour
     {
         if (eCurrentHealth == 0)
         {
-            gameObject.SetActive(false);
+            if (!isBoss)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                wController.bossDefeated = true;
+                gameObject.SetActive(false);
+            }
             return;
         }
 
@@ -55,5 +67,11 @@ public class EnemiesStats : MonoBehaviour
         {
             eCurrentHealth = 0;
         }
+    }
+
+    private void OnDestroy()
+    {
+        wController.waveEnemyDefeated++;
+        wController.eCounter--;
     }
 }
