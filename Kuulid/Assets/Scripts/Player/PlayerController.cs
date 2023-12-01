@@ -10,10 +10,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform bulletPosition;
-    [SerializeField] float cooldown;
-    private float cooldownTimer;
     private WaveController wController;
     private Vector2 movement;
+
+    private bool beganShoot = false;
 
     private void Awake()
     {
@@ -23,11 +23,10 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        cooldownTimer -= Time.deltaTime;
-
-        //If cooldown inferior or equal to 0, strat shoot coroutine
-        if (cooldownTimer <= 0 && wController.hasStarted)
-            StartCoroutine("Shoot");
+        if (!beganShoot)
+        {
+            StartCoroutine(Shoot());
+        }
     }
 
     private void FixedUpdate()
@@ -42,16 +41,19 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator Shoot()
     {
-        yield return null;
-
-        cooldownTimer = cooldown;
-
-        GameObject bullet = ObjectPool.instance.GetPooledObject();
-
-        if (bullet != null)
+        while (wController.hasStarted)
         {
-            bullet.transform.position = bulletPosition.position;
-            bullet.SetActive(true);
+            beganShoot = true;
+
+            yield return new WaitForSeconds(0.1f);
+
+            GameObject bullet = ObjectPool.instance.GetPooledObject();
+
+            if (bullet != null)
+            {
+                bullet.transform.position = bulletPosition.position;
+                bullet.SetActive(true);
+            }
         }
     }
 
