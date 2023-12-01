@@ -38,7 +38,7 @@ public class DeemonidPatterns : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.15f);
+            yield return new WaitForSeconds(0.3f);
 
             if (!rotateShoot)
             {

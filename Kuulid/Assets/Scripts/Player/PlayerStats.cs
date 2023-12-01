@@ -14,6 +14,8 @@ public class PlayerStats : MonoBehaviour
 
     public float pBulletSpeed;
 
+    public bool isDead = false;
+
     private void Awake()
     {
         if (instance == null)
@@ -38,6 +40,7 @@ public class PlayerStats : MonoBehaviour
     {
         if (pCurrentHealth == 0)
         {
+            isDead = true;
             return;
         }
 

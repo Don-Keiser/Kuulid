@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class VictoryController : MonoBehaviour
 {
-    private WaveController wController;
     [SerializeField] GameObject WinMenu;
-    [SerializeField] float timeShow;
+    [SerializeField] TMP_Text winLoseText;
+
+    private WaveController wController;
+
+    private string Won = "CONGRATULATIONS!\nYOU'VE WON!";
+    private string Lost = "GAME OVER\n=(";
 
     private void Awake()
     {
@@ -15,11 +20,16 @@ public class VictoryController : MonoBehaviour
 
     private void Update()
     {
-        timeShow = Time.timeScale;
-
         if (wController.bossDefeated)
         {
             WinMenu.SetActive(true);
+            winLoseText.text = Won;
+            Time.timeScale = 0.0f;
+        }
+        if (PlayerStats.instance.isDead)
+        {
+            WinMenu.SetActive(true);
+            winLoseText.text = Lost;
             Time.timeScale = 0.0f;
         }
     }

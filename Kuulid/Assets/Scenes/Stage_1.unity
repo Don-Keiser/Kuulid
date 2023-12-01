@@ -452,6 +452,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -4755761934463960699, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+      propertyPath: pMaxHealth
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: -4755761934463960699, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+      propertyPath: pCurrentHealth
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: -4755761934463960699, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
       propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 2
       objectReference: {fileID: 0}
@@ -1135,8 +1143,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: 1000, y: 100}
+  m_AnchoredPosition: {x: 0, y: -200}
+  m_SizeDelta: {x: 1000, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1198707308
 MonoBehaviour:
@@ -1726,7 +1734,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 200}
+  m_AnchoredPosition: {x: 0, y: 100}
   m_SizeDelta: {x: 400, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1634611537
@@ -2247,11 +2255,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6768107779113247042, guid: 5f8aa6593f3aacb4f9737d2cdccd4072, type: 3}
       propertyPath: eMaxHealth
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6768107779113247042, guid: 5f8aa6593f3aacb4f9737d2cdccd4072, type: 3}
       propertyPath: eCurrentHealth
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6768107779113247042, guid: 5f8aa6593f3aacb4f9737d2cdccd4072, type: 3}
       propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2780,6 +2788,10 @@ PrefabInstance:
       propertyPath: timeShow
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4207768031207715478, guid: 050054ef8a95c46409f86dc719bb0541, type: 3}
+      propertyPath: winLoseText
+      value: 
+      objectReference: {fileID: 1198707308}
     - target: {fileID: 8750465957005721742, guid: 050054ef8a95c46409f86dc719bb0541, type: 3}
       propertyPath: m_RootOrder
       value: 6
