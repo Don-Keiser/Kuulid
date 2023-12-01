@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    private Vector2 movement;
     [SerializeField] float speed;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] GameObject bulletPrefab;
@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float cooldown;
     private float cooldownTimer;
     private WaveController wController;
+    private Vector2 movement;
 
     private void Awake()
     {
@@ -41,7 +42,6 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator Shoot()
     {
-
         yield return null;
 
         cooldownTimer = cooldown;

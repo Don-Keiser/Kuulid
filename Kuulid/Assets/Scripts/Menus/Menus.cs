@@ -14,11 +14,13 @@ public class Menus : MonoBehaviour
     public void LoadStage1()
     {
         SceneManager.LoadScene("Stage_1");
+        Time.timeScale = 1.0f;
     }
 
     public void LoadStage2()
     {
         SceneManager.LoadScene("Stage_2");
+        Time.timeScale = 1.0f;
     }
 
     public void ReturnToMainMenu()

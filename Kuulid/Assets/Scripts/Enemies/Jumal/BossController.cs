@@ -79,8 +79,6 @@ public class BossController : MonoBehaviour
 
     private IEnumerator Shoot()
     {
-        Debug.Log("Shoot1 is running");
-
         while (changeShootCooldown > 0)
         {
             yield return new WaitForSeconds(0.2f);
