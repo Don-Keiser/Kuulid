@@ -41,6 +41,7 @@ public class PlayerStats : MonoBehaviour
         if (pCurrentHealth == 0)
         {
             isDead = true;
+            Debug.Log("Base Destroyed");
             return;
         }
 

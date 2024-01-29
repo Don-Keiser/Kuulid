@@ -491,6 +491,18 @@ PrefabInstance:
       propertyPath: cooldown
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 2164501410793937988, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: Movements
+      objectReference: {fileID: 0}
+    - target: {fileID: 2164501410793937988, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Gamepad
+      objectReference: {fileID: 0}
+    - target: {fileID: 2164501410793937988, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2164501410793937990, guid: fc4cbbd01cbc3ec4ab9a7e10c53ec074, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -901,10 +913,6 @@ MonoBehaviour:
     m_ActionId: c1edc78c-7557-4fac-90cb-769c4837bdb3
     m_ActionName: Keyboard/Shoot[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 78469b63-eb3f-4f88-b3c7-e3c267a8969b
-    m_ActionName: Keyboard/test[/Keyboard/e]
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 722361017}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
@@ -921,8 +929,8 @@ MonoBehaviour:
     m_ActionId: b735313a-86d3-441d-819f-85b0484a4cd0
     m_ActionName: Keyboard/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Keyboard
+  m_DefaultControlScheme: Gamepad
+  m_DefaultActionMap: Movements
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &762049420 stripped
@@ -1584,10 +1592,6 @@ MonoBehaviour:
     m_ActionId: c1edc78c-7557-4fac-90cb-769c4837bdb3
     m_ActionName: Keyboard/Shoot[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 78469b63-eb3f-4f88-b3c7-e3c267a8969b
-    m_ActionName: Keyboard/test[/Keyboard/e]
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1445859190}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
@@ -1604,8 +1608,8 @@ MonoBehaviour:
     m_ActionId: b735313a-86d3-441d-819f-85b0484a4cd0
     m_ActionName: Keyboard/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Keyboard
+  m_DefaultControlScheme: Gamepad
+  m_DefaultActionMap: Movements
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &1445859190
